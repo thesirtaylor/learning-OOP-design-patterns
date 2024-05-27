@@ -1,0 +1,18 @@
+{
+  "name": "mastering-OOP-design-patterns",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": "git@github.com:thesirtaylor/mastering-OOP-design-patterns.git",
+  "author": "Ajayi Olatunji O. <ajayiolatunji17@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node --env-file=.env --watch -r ts-node/register src/main.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
