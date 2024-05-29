@@ -1,6 +1,6 @@
 export interface Car {
     model: string;
-    drive(): void;
+    drive(): string;
 }
 
 export interface Factory {
