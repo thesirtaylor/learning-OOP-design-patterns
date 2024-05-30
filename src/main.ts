@@ -1,3 +1,4 @@
+import { Director } from "./rough/builderRough";
 import { LightModeFactory } from "./creational/abstract-factory/Factory";
 import { GUIFactory } from "./creational/abstract-factory/abstractfactory.interface";
 import { GameCharacterBuilder } from "./creational/builder/Concrete";
@@ -20,6 +21,14 @@ function Main() {
     builder.setClass("Ranger");
     const character = builder.build();
     console.log(character.describe());
+
+
+    const director = new Director();
+    const buildFerrari = director.buildCar(2, 'V8').build();
+    const buildSuzuki = director.buildMotorcycle('V2').build();
+
+    console.log(buildFerrari);
+    console.log(buildSuzuki)
 }
 
 Main();
