@@ -1,6 +1,6 @@
 import { CharacterBuilder, GameCharacterInterface } from "./ builder.interface";
 
-class GameCharacter implements GameCharacter {
+class GameCharacter implements GameCharacterInterface {
   name?: string;
   charClass?: string;
   weapon?: string;

@@ -3,6 +3,7 @@ import { LightModeFactory } from "./creational/abstract-factory/Factory";
 import { GUIFactory } from "./creational/abstract-factory/abstractfactory.interface";
 import { GameCharacterBuilder } from "./creational/builder/Concrete";
 import { CarFactory } from "./creational/factory/Factory";
+import { Person } from "./creational/protoype/Concrete";
 
 function Main() {
     const carFactory = new CarFactory();
@@ -29,6 +30,13 @@ function Main() {
 
     console.log(buildFerrari);
     console.log(buildSuzuki)
+
+    const rickSanches = new Person("Earth", "Rick", "c137");
+
+    console.log({rickSanches});
+    const cloneRickSanches = rickSanches.clone();
+    console.log('Rick Sanches Clone')
+    console.log(cloneRickSanches)
 }
 
 Main();
