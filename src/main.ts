@@ -1,9 +1,10 @@
-import { Director } from "./rough/builderRough";
+import { Director } from "./rough/builder.rough";
 import { LightModeFactory } from "./creational/abstract-factory/Factory";
 import { GUIFactory } from "./creational/abstract-factory/abstractfactory.interface";
 import { GameCharacterBuilder } from "./creational/builder/Concrete";
 import { CarFactory } from "./creational/factory/Factory";
 import { Person } from "./creational/protoype/Concrete";
+import { ComponentWithReference, Prototype } from "./rough/prototype.rough";
 
 function Main() {
     const carFactory = new CarFactory();
@@ -37,6 +38,13 @@ function Main() {
     const cloneRickSanches = rickSanches.clone();
     console.log('Rick Sanches Clone')
     console.log(cloneRickSanches)
+
+    const prototype1 = new Prototype();
+    prototype1.primitive = 245;
+    prototype1.component = new Date();
+    prototype1.circularReference = new ComponentWithReference(prototype1);
+
+    console.log(prototype1.circularReference.returnPrototype());
 }
 
 Main();
