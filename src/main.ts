@@ -5,6 +5,7 @@ import { GameCharacterBuilder } from "./creational/builder/Concrete";
 import { CarFactory } from "./creational/factory/Factory";
 import { Person } from "./creational/protoype/Concrete";
 import { ComponentWithReference, Prototype } from "./rough/prototype.rough";
+import { Singleton } from "./creational/singleton/Concrete";
 
 function Main() {
     const carFactory = new CarFactory();
@@ -45,6 +46,17 @@ function Main() {
     prototype1.circularReference = new ComponentWithReference(prototype1);
 
     console.log(prototype1.circularReference.returnPrototype());
+
+    const top = Singleton.Instance();
+    const middle = Singleton.Instance();
+    const bottom = Singleton.Instance();
+    console.log(top === bottom)
+
+    top.setConfig(5);
+    bottom.setConfig(10);
+
+    console.log(top.getConfig());
+    console.log(middle.getConfig());
 }
 
 Main();
