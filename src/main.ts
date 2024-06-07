@@ -6,6 +6,7 @@ import { CarFactory } from "./creational/factory/Factory";
 import { Person } from "./creational/protoype/Concrete";
 import { ComponentWithReference, Prototype } from "./rough/prototype.rough";
 import { Singleton } from "./creational/singleton/Concrete";
+import { SlackAdapter, SlackClient } from "./structural/adapter/Concrete";
 
 function Main() {
     const carFactory = new CarFactory();
@@ -45,7 +46,7 @@ function Main() {
     prototype1.component = new Date();
     prototype1.circularReference = new ComponentWithReference(prototype1);
 
-    console.log(prototype1.circularReference.returnPrototype());
+    console.log({"return prototype": prototype1.circularReference.returnPrototype()});
 
     const top = Singleton.Instance();
     const middle = Singleton.Instance();
@@ -57,6 +58,12 @@ function Main() {
 
     console.log(top.getConfig());
     console.log(middle.getConfig());
+
+
+    const slackClient =  new SlackClient();
+    const slackAdapter = new SlackAdapter(slackClient);
+
+    slackAdapter.sendMessage("general", "ari", "Hello World");
 }
 
 Main();
