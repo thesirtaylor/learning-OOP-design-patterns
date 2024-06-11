@@ -1,5 +1,5 @@
 import { Director } from "./rough/builder.rough";
-import { LightModeFactory } from "./creational/abstract-factory/Factory";
+import { DarkModeFactory, LightModeFactory } from "./creational/abstract-factory/Factory";
 import { GUIFactory } from "./creational/abstract-factory/abstractfactory.interface";
 import { GameCharacterBuilder } from "./creational/builder/Concrete";
 import { CarFactory } from "./creational/factory/Factory";
@@ -17,6 +17,11 @@ function Main() {
     const button = uiFactory.createButton();
     console.log(button?.click()); 
 
+    const darkUiFactory: GUIFactory = new DarkModeFactory();
+    const darkButton = darkUiFactory.createButton();
+    const darkPanel = darkUiFactory.createPanel();
+    console.log(darkButton?.click());
+
 
     const builder: GameCharacterBuilder = new GameCharacterBuilder();
     builder.setName("Ariana");
@@ -28,8 +33,8 @@ function Main() {
 
 
     const director = new Director();
-    const buildFerrari = director.buildCar(2, 'V8').build();
-    const buildSuzuki = director.buildMotorcycle('V2').build();
+    const buildFerrari = director.buildVehicle(2, 'V8').build();
+    const buildSuzuki = director.buildVehicle(1, 'V2').build();
 
     console.log(buildFerrari);
     console.log(buildSuzuki)
@@ -64,6 +69,8 @@ function Main() {
     const slackAdapter = new SlackAdapter(slackClient);
 
     slackAdapter.sendMessage("general", "ari", "Hello World");
+
+    
 }
 
 Main();

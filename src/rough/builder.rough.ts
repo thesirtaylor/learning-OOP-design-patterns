@@ -3,70 +3,36 @@ interface Builder {
     setEngine(engine: string): this;
 }
 
-class CarBuilder implements Builder {
-    private car = new Car();
+class VehicleBuilder implements Builder {
+    private vehicle = new Vehicle();
     setSeats(seats: number): this {
-        this.car.seats = seats;
+        this.vehicle.seats = seats;
         return this;
     }
     setEngine(engine: string): this {
-        this.car.engine = engine;
+        this.vehicle.engine = engine;
         return this;
     }
 
-    build(): Car {
-        return this.car;
+    build(): Vehicle {
+        return this.vehicle;
     }
 
 }
 
-class MotorcycleBuilder implements Builder {
-    private motorcycle = new Motorcycle();
-    setSeats(seats: number): this {
-        this.motorcycle.seats = seats;
-        return this;
-    }
-    setEngine(engine: string): this {
-        this.motorcycle.engine = engine;
-        return this;
-    }
-
-    build(): Motorcycle {
-        return this.motorcycle;
-    }
-
+class Vehicle {
+    seats!: number;
+    engine!: string;
 }
-
-class Car {
-    seats: number = 0;
-    engine: string = '';
-}
-
-class Motorcycle {
-    seats: number = 0;
-    engine: string = '';
-}
-
-
 export class Director {
     constructor() { }
-    carBuilder = new CarBuilder();
-    motorcycleBuilder = new MotorcycleBuilder();
+    vehicleBuilder = new VehicleBuilder();
     
-    buildCar(seat: number, engine: string) {
-        return this.carBuilder.setSeats(seat).setEngine(engine);
+    buildVehicle(seat: number, engine: string) {
+        return this.vehicleBuilder.setSeats(seat).setEngine(engine);
     }
     
-    returnCar(): Car {
-        return this.carBuilder.build();
+    returnVehicle(): Vehicle {
+        return this.vehicleBuilder.build();
     }
-
-    buildMotorcycle(engine: string) {
-        return this.motorcycleBuilder.setSeats(1).setEngine(engine);
-    }
-
-    returnMotorcycle(): Motorcycle {
-        return this.motorcycleBuilder.build();
-    }
-
 }
