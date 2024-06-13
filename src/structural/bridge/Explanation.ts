@@ -27,3 +27,12 @@
  * 1. you want to split a big class that has several different variants of some functionality into two different layers.
  * 2. you need to switch between different implementations of the same abstraction at runtime.
 */
+
+/**
+ * Usage examples: 
+ * The Bridge pattern is especially useful when dealing with cross-platform apps, supporting multiple types of database servers or working with several API providers of a certain kind (for example, cloud platforms, social networks, etc.)
+ */
+
+/**
+ * Bridge can be identifeid by a clear distinction between some controlling entity and several different platforms that it relies on.
+ */

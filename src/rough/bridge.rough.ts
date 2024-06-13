@@ -3,7 +3,7 @@ abstract class AbstractMessage {
   constructor (messageSender: IMessageSender) {
     this.messageSender = messageSender;
   }
-  abstract SendMessage(message: string): void;
+  abstract Send(message: string): void;
 }
 
 interface IMessageSender {
@@ -23,12 +23,12 @@ class EmailMessageSender implements IMessageSender {
 }
 
 class LongMessage extends AbstractMessage {
-  SendMessage(message: string): void {
+  Send(message: string): void {
     this.messageSender.sendMessage(message);
   }
 }
 
 
 const sendLongMessage = new LongMessage(new SmsMessageSender());
-sendLongMessage.SendMessage('Hello, this is a long message');
-sendLongMessage.SendMessage('Hello, this is a long message');
+sendLongMessage.Send('Hello, this is a long message');
+sendLongMessage.Send('Hello, this is a long message');
