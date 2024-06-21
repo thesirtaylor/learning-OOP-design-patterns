@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "main": "main.js",
   "repository": "git@github.com:thesirtaylor/mastering-OOP-design-patterns.git",
+  "description": "url to learning material https://refactoring.guru/design-patterns/typescript",
   "author": "Ajayi Olatunji O. <ajayiolatunji17@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
     "dev": "node --env-file=.env --watch -r ts-node/register src/main.ts",
     "dev:composite": "node --env-file=.env --watch -r ts-node/register src/structural/composite/main.ts",
-    "dev:decorator": "node --env-file=.env --watch -r ts-node/register src/structural/decorator/main.ts"
+    "dev:decorator": "node --env-file=.env --watch -r ts-node/register src/structural/decorator/main.ts",
+    "dev:facade": "node --env-file=.env --watch -r ts-node/register src/structural/facade/main.ts"
   },
   "dependencies": {},
   "devDependencies": {
