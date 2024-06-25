@@ -11,7 +11,8 @@
     "dev": "node --env-file=.env --watch -r ts-node/register src/main.ts",
     "dev:composite": "node --env-file=.env --watch -r ts-node/register src/structural/composite/main.ts",
     "dev:decorator": "node --env-file=.env --watch -r ts-node/register src/structural/decorator/main.ts",
-    "dev:facade": "node --env-file=.env --watch -r ts-node/register src/structural/facade/main.ts"
+    "dev:facade": "node --env-file=.env --watch -r ts-node/register src/structural/facade/main.ts",
+    "dev:flyweight": "node --env-file=.env --watch -r ts-node/register src/structural/flyweight/main.ts"
   },
   "dependencies": {},
   "devDependencies": {
