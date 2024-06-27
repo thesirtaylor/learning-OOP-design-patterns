@@ -11,8 +11,8 @@ export class RealSubject implements Subject {
 export class Proxy implements Subject {
     private realSubject: RealSubject;
 
-    constructor(realSubject: RealSubject){
-        this.realSubject = realSubject;
+    constructor(){
+        this.realSubject = new RealSubject();
     }
 
     private logAccess(): void{

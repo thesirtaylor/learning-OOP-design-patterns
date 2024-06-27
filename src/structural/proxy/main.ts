@@ -6,5 +6,5 @@ realSubject.request();
 
 console.log('\n');
 //proxy
-const proxy = new Proxy(realSubject);
+const proxy = new Proxy();
 proxy.request();
